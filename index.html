@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bitcoin Future - Navigate Bitcoin Adoption Without Costly Mistakes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bitcoin-orange: #f7931a;
+            --steel-gray: #6b7280;
+            --dark-gray: #1f2937;
+            --black: #000000;
+            --white: #ffffff;
+            --light-gray: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--black);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23f7931a" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(10px, 10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--bitcoin-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--steel-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(247, 147, 26, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-alt {
+            background: var(--dark-gray);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .section-alt h2 {
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, var(--white) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Origin Story */
+        .origin {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .origin-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .origin-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .origin-text p {
+            margin-bottom: 1.5rem;
+            color: var(--steel-gray);
+        }
+
+        .highlight {
+            color: var(--bitcoin-orange);
+            font-weight: 600;
+        }
+
+        .origin-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--bitcoin-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--steel-gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services */
+        .services {
+            background: var(--dark-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--bitcoin-orange), #ff8c00);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--bitcoin-orange);
+            box-shadow: 0 20px 40px rgba(247, 147, 26, 0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--steel-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            color: var(--steel-gray);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--bitcoin-orange);
+            font-weight: bold;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .advantage-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .advantage-card h3 {
+            margin-bottom: 1rem;
+            color: var(--bitcoin-orange);
+        }
+
+        .advantage-card p {
+            color: var(--steel-gray);
+        }
+
+        /* Educational Insights */
+        .insights {
+            background: var(--dark-gray);
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .insight-card {
+            background: var(--black);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--bitcoin-orange);
+        }
+
+        .insight-card h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .insight-card p {
+            color: var(--steel-gray);
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--black);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+            color: var(--black);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .process-step h3 {
+            color: var(--white);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: var(--steel-gray);
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--dark-gray);
+        }
+
+        .faq-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--black);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(247, 147, 26, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.1) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.2) 100%);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--bitcoin-orange);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            color: var(--steel-gray);
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 200px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1.2rem;
+            color: var(--steel-gray);
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: var(--dark-gray);
+            border: 1px solid var(--steel-gray);
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--bitcoin-orange);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            justify-self: center;
+            width: fit-content;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .origin-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .origin-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Navigate Bitcoin Adoption Without Costly Mistakes</h1>
+                <p class="hero-subtitle">Full-spectrum Bitcoin strategy combining technical expertise, crisis-tested judgment, and early adopter insights to secure your financial sovereignty.</p>
+                <a href="#contact" class="hero-cta">Schedule Free Strategy Session →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Story -->
+    <section class="section origin">
+        <div class="container">
+            <h2>Forged in Crisis, Refined by Experience</h2>
+            <div class="origin-content">
+                <div class="origin-text fade-in">
+                    <p>Most Bitcoin consultants learned from books and courses. <span class="highlight">I learned from crisis.</span></p>
+                    <p>When traditional systems collapsed around me, Bitcoin wasn't just an investment thesis—it was a lifeline. That crucible taught me something no classroom could: how to navigate uncertainty with technical precision and psychological resilience.</p>
+                    <p>Since then, I've combined <span class="highlight">deep technical expertise</span> with <span class="highlight">crisis-tested judgment</span> to help businesses and individuals transition to Bitcoin without the painful lessons I learned the hard way.</p>
+                </div>
+                <div class="origin-stats fade-in">
+                    <div class="stat-card">
+                        <div class="stat-number">2010</div>
+                        <div class="stat-label">Early Adopter</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">CBP</div>
+                        <div class="stat-label">Certified Bitcoin Professional</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">AI+</div>
+                        <div class="stat-label">Enhanced Analysis</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">360°</div>
+                        <div class="stat-label">Full Spectrum Analysis</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-alt services">
+        <div class="container">
+            <h2>Strategic Bitcoin Implementation</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>Technical Consulting</h3>
+                    <p>Technical implementation strategy and execution from someone who's proven Bitcoin under real-world pressure.</p>
+                    <ul class="service-features">
+                        <li>Architecture and infrastructure planning</li>
+                        <li>Integration strategy and execution</li>
+                        <li>Risk assessment and mitigation</li>
+                        <li>Team training and knowledge transfer</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Treasury Implementation</h3>
+                    <p>Transform your treasury strategy with battle-tested Bitcoin adoption frameworks designed for institutional needs.</p>
+                    <ul class="service-features">
+                        <li>Corporate treasury Bitcoin integration</li>
+                        <li>Multi-signature setup and governance</li>
+                        <li>Regulatory compliance frameworks</li>
+                        <li>Staff training and operational procedures</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Security Audits</h3>
+                    <p>Comprehensive security assessments that identify vulnerabilities before they become catastrophic failures.</p>
+                    <ul class="service-features">
+                        <li>Infrastructure security assessment</li>
+                        <li>Key management evaluation</li>
+                        <li>Operational security review</li>
+                        <li>Incident response planning</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🚨</div>
+                    <h3>Emergency Response Consulting</h3>
+                    <p>Crisis situations demand immediate, expert guidance. When Bitcoin security incidents or urgent sovereignty transitions arise, get proven crisis-tested support.</p>
+                    <ul class="service-features">
+                        <li>24-hour incident response coordination</li>
+                        <li>Security breach assessment and recovery</li>
+                        <li>Emergency custody transitions</li>
+                        <li>Crisis communication strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose -->
+    <section class="section why-choose">
+        <div class="container">
+            <h2>Why Full-Spectrum Analysis Matters</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card fade-in">
+                    <div class="advantage-icon">🎯</div>
+                    <h3>Crisis-Tested Judgment</h3>
+                    <p>Learned Bitcoin through necessity, not theory. Experience real-world pressure situations where decisions matter.</p>
+                </div>
+                <div class="advantage-card fade-in">
+                    <div class="advantage-icon">🔍</div>
+                    <h3>Multi-Domain Expertise</h3>
+                    <p>Technical depth combined with political, cultural, and psychological analysis for complete strategic understanding.</p>
+                </div>
+                <div class="advantage-card fade-in">
+                    <div class="advantage-icon">⚡</div>
+                    <h3>Early Adopter Insights</h3>
+                    <p>Witnessed every Bitcoin cycle, bubble, and bear market. Know what works and what fails over time.</p>
+                </div>
+                <div class="advantage-card fade-in">
+                    <div class="advantage-icon">🛠️</div>
+                    <h3>Implementation Focus</h3>
+                    <p>Not just strategy—hands-on technical execution that turns Bitcoin theory into operational reality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Insights -->
+    <section class="section section-alt insights">
+        <div class="container">
+            <h2>Strategic Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card fade-in">
+                    <h3>The Treasury Transition Trap</h3>
+                    <p>Most companies approach Bitcoin treasury adoption like buying stocks. This fundamental misunderstanding leads to security failures, operational chaos, and regulatory problems that could have been avoided with proper planning.</p>
+                </div>
+                <div class="insight-card fade-in">
+                    <h3>Security Theater vs. Real Security</h3>
+                    <p>Complex security setups often create more risk than they prevent. The key is understanding which security measures actually matter and which ones just make people feel better while introducing new failure points.</p>
+                </div>
+                <div class="insight-card fade-in">
+                    <h3>Bitcoin Resistance in the Boardroom</h3>
+                    <p>The biggest barriers to Bitcoin adoption aren't technical—they're psychological. Executives who embrace cutting-edge technology in other areas suddenly become risk-averse when Bitcoin enters the conversation. Understanding and addressing these deeper concerns is crucial for successful implementation.</p>
+                </div>
+                <div class="insight-card fade-in">
+                    <h3>The Sovereignty Transition Shock</h3>
+                    <p>Even tech-savvy executives feel genuine terror when transitioning from traditional custody to self-custody. This isn't about technical competence—it's about psychological readiness for true financial responsibility. Proper preparation addresses both the technical and emotional aspects of this transition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Preview -->
+    <section class="section process">
+        <div class="container">
+            <h2>Strategic Consultation Process</h2>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Assessment</h3>
+                    <p>Deep dive into your current situation, goals, and constraints. I'll analyze your technical infrastructure, risk tolerance, and organizational readiness for Bitcoin integration.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">02</div>
+                    <h3>Strategy Development</h3>
+                    <p>Custom roadmap design based on your specific needs. This includes technical architecture, security protocols, implementation timeline, and risk mitigation strategies.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">03</div>
+                    <h3>Implementation Support</h3>
+                    <p>Hands-on guidance through execution. From technical setup to team training, I'll ensure your Bitcoin strategy becomes operational reality without costly mistakes.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">04</div>
+                    <h3>Ongoing Optimization</h3>
+                    <p>Continuous refinement and support as your needs evolve. Bitcoin adoption is a journey, not a destination—I'll help you adapt as the landscape changes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-alt faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-content">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">How long does a typical Bitcoin implementation take?</div>
+                    <div class="faq-answer">Timeline varies based on complexity and organizational readiness. Simple treasury strategies can be implemented in 2-4 weeks, while comprehensive enterprise solutions typically take 3-6 months. I provide realistic timelines during our initial consultation.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">What if I don't see value from our first session?</div>
+                    <div class="faq-answer">If you don't find clear, actionable value in our initial consultation, don't pay. I'm confident in the insights I provide, and I want you to feel completely comfortable with the investment.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">Do you work with companies of all sizes?</div>
+                    <div class="faq-answer">I work with companies of all sizes and individuals. Whether you're a startup exploring Bitcoin integration or an established enterprise implementing treasury strategy, I tailor my approach to your specific needs and resources.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">How technical do I need to be to work with you?</div>
+                    <div class="faq-answer">Not very. I translate complex technical concepts into business language and handle the technical heavy lifting. You need to understand the strategic implications, not the cryptographic details.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">What makes your approach different from other Bitcoin consultants?</div>
+                    <div class="faq-answer">Most consultants learned Bitcoin theory first. I lived through crisis where Bitcoin proved essential, giving me unique insight into both the technology and the psychological aspects of financial sovereignty transitions.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">How do you stay current with the rapidly evolving Bitcoin space?</div>
+                    <div class="faq-answer">Continuous education through the Bitcoin ecosystem, maintaining my CBP certification, and staying connected with industry developments. Bitcoin's core principles remain constant, but new tools and techniques emerge to improve implementation efficiency and security.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Ready to Navigate Bitcoin Adoption?</h2>
+                <p class="contact-subtitle">Schedule a free 30-minute strategy session to discuss your Bitcoin implementation goals. If you don't find clear, actionable value in our consultation, don't pay.</p>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="challenge">What's your primary Bitcoin implementation goal?</label>
+                        <textarea id="challenge" name="challenge" placeholder="Describe your current situation and what you're looking to achieve..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Schedule Free Strategy Session</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- EmailJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS when document is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init("eThZpkLgAIZr4sEQL");
+                console.log('EmailJS initialized successfully');
+            } else {
+                console.error('EmailJS failed to load - script not found');
+                // Fallback: try to load EmailJS dynamically
+                const script = document.createElement('script');
+                script.src = 'https://cdn.emailjs.com/dist/email.min.js';
+                script.onload = function() {
+                    if (typeof emailjs !== 'undefined') {
+                        emailjs.init("eThZpkLgAIZr4sEQL");
+                        console.log('EmailJS loaded dynamically and initialized');
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        });
+    </script>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Form handling with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Check if EmailJS is available
+            if (typeof emailjs === 'undefined') {
+                alert('Email service is not available. Please try again later or contact me directly.');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email via EmailJS
+            emailjs.send('service_qm94mqh', 'template_dxg2zrm', {
+                name: data.name,
+                email: data.email,
+                company: data.company || 'Not specified',
+                challenge: data.challenge || 'No specific goals mentioned'
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Thank you! Your message has been sent. I\'ll be in touch within 24 hours to schedule your free strategy session.');
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                alert('Sorry, there was an error sending your message. Please try again or contact me directly.');
+            })
+            .finally(function() {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
