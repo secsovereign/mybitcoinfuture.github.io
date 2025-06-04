@@ -141,6 +141,27 @@
             background-clip: text;
         }
 
+        /* Bitcoin Introduction */
+        .bitcoin-intro {
+            background: var(--dark-gray);
+        }
+
+        .bitcoin-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bitcoin-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--white);
+        }
+
+        .bitcoin-text p {
+            margin-bottom: 1.5rem;
+            color: var(--steel-gray);
+        }
+
         /* Origin Story */
         .origin {
             background: var(--black);
@@ -580,6 +601,24 @@
         </div>
     </section>
 
+    <!-- What is Bitcoin -->
+    <section class="section section-alt bitcoin-intro">
+        <div class="container">
+            <h2>Understanding Bitcoin</h2>
+            <div class="bitcoin-content">
+                <div class="bitcoin-text fade-in">
+                    <p><span class="highlight">Bitcoin is the world's first decentralized digital currency</span>, created in 2009 by the pseudonymous Satoshi Nakamoto. Unlike traditional currencies controlled by governments and banks, Bitcoin operates on a peer-to-peer network secured by cryptography.</p>
+                    
+                    <p>At its core, Bitcoin solves the "double-spending problem" through a distributed ledger called the blockchain. This revolutionary technology enables direct value transfer between parties without requiring a trusted intermediary—fundamentally changing how we think about money and financial sovereignty.</p>
+                    
+                    <p>Since its inception, Bitcoin has evolved from an experimental digital currency to a legitimate asset class adopted by individuals, corporations, and even nation-states. <span class="highlight">Its fixed supply of 21 million coins and decentralized nature make it a hedge against inflation and monetary debasement.</span></p>
+                    
+                    <p>Today, Bitcoin represents more than just digital money—it's a pathway to financial sovereignty, a store of value, and the foundation of a new monetary system built on mathematical certainty rather than institutional trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Origin Story -->
     <section class="section origin">
         <div class="container">
@@ -812,27 +851,15 @@
     </section>
 
     <!-- EmailJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
-        // Initialize EmailJS when document is ready
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof emailjs !== 'undefined') {
-                emailjs.init("eThZpkLgAIZr4sEQL");
-                console.log('EmailJS initialized successfully');
-            } else {
-                console.error('EmailJS failed to load - script not found');
-                // Fallback: try to load EmailJS dynamically
-                const script = document.createElement('script');
-                script.src = 'https://cdn.emailjs.com/dist/email.min.js';
-                script.onload = function() {
-                    if (typeof emailjs !== 'undefined') {
-                        emailjs.init("eThZpkLgAIZr4sEQL");
-                        console.log('EmailJS loaded dynamically and initialized');
-                    }
-                };
-                document.head.appendChild(script);
-            }
-        });
+        // Initialize EmailJS 
+        (function() {
+            emailjs.init({
+                publicKey: "eThZpkLgAIZr4sEQL"
+            });
+            console.log('EmailJS initialized with latest version');
+        })();
     </script>
 
     <script>
@@ -898,6 +925,7 @@
             
             // Check if EmailJS is available
             if (typeof emailjs === 'undefined') {
+                console.error('EmailJS not loaded');
                 alert('Email service is not available. Please try again later or contact me directly.');
                 return;
             }
@@ -933,5 +961,5 @@
             });
         });
     </script>
-</body> 
+</body>
 </html>
