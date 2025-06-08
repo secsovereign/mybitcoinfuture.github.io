@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bitcoin Future - Navigate Bitcoin Adoption Without Costly Mistakes</title>
+    <title>My Bitcoin Future - Professional Bitcoin Treasury</title>
     <style>
         * {
             margin: 0;
@@ -83,6 +83,14 @@
             margin-bottom: 2rem;
             max-width: 600px;
             animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-subheading {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--bitcoin-orange);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.1s both;
         }
 
         .hero-cta {
@@ -297,9 +305,62 @@
             font-weight: bold;
         }
 
+        /* Principles Gap Section */
+        .principles-gap {
+            background: var(--black);
+        }
+
+        .gap-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gap-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--steel-gray);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-card {
+            background: var(--dark-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--steel-gray);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-card.our-approach {
+            border-left-color: var(--bitcoin-orange);
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.1) 100%);
+        }
+
+        .comparison-card h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .comparison-card p {
+            color: var(--steel-gray);
+            line-height: 1.6;
+        }
+
+        .comparison-card.our-approach h3 {
+            color: var(--bitcoin-orange);
+        }
+
         /* Why Choose Section */
         .why-choose {
-            background: var(--black);
+            background: var(--dark-gray);
             color: var(--white);
         }
 
@@ -337,7 +398,7 @@
 
         /* Educational Insights */
         .insights {
-            background: var(--dark-gray);
+            background: var(--black);
         }
 
         .insights-grid {
@@ -347,7 +408,7 @@
         }
 
         .insight-card {
-            background: var(--black);
+            background: var(--dark-gray);
             padding: 2rem;
             border-radius: 15px;
             border-left: 4px solid var(--bitcoin-orange);
@@ -364,7 +425,7 @@
 
         /* Process Section */
         .process {
-            background: var(--black);
+            background: var(--dark-gray);
         }
 
         .process-grid {
@@ -374,7 +435,7 @@
         }
 
         .process-step {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.05) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, rgba(247, 147, 26, 0.05) 100%);
             padding: 2rem;
             border-radius: 15px;
             border: 1px solid rgba(247, 147, 26, 0.2);
@@ -412,7 +473,7 @@
 
         /* FAQ Section */
         .faq {
-            background: var(--dark-gray);
+            background: var(--black);
         }
 
         .faq-content {
@@ -421,7 +482,7 @@
         }
 
         .faq-item {
-            background: var(--black);
+            background: var(--dark-gray);
             border-radius: 10px;
             margin-bottom: 1rem;
             border: 1px solid rgba(247, 147, 26, 0.1);
@@ -471,7 +532,7 @@
 
         /* Contact Section */
         .contact {
-            background: var(--black);
+            background: var(--dark-gray);
             color: var(--white);
         }
 
@@ -509,7 +570,7 @@
 
         .form-group input,
         .form-group textarea {
-            background: var(--dark-gray);
+            background: var(--black);
             border: 1px solid var(--steel-gray);
             border-radius: 8px;
             padding: 1rem;
@@ -522,6 +583,22 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--bitcoin-orange);
+        }
+
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: #ef4444;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
         }
 
         .form-group textarea {
@@ -594,40 +671,24 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Navigate Bitcoin Adoption Without Costly Mistakes</h1>
-                <p class="hero-subtitle">Full-spectrum Bitcoin strategy combining technical expertise, crisis-tested judgment, and early adopter insights to secure your financial sovereignty.</p>
-                <a href="#contact" class="hero-cta">Schedule Free Strategy Session →</a>
+                <h1>My Bitcoin Future</h1>
+                <h2 class="hero-subheading">Sovereign Bitcoin Treasury</h2>
+                <p class="hero-subtitle">Not your keys, not your coins. Not your infrastructure, not your operations. You own the hardware, software, and keys. We handle the professional implementation.</p>
+                <a href="#contact" class="hero-cta">Get Principled Treasury Assessment →</a>
             </div>
         </div>
     </section>
 
-    <!-- What is Bitcoin -->
-    <section class="section section-alt bitcoin-intro">
-        <div class="container">
-            <h2>Understanding Bitcoin</h2>
-            <div class="bitcoin-content">
-                <div class="bitcoin-text fade-in">
-                    <p><span class="highlight">Bitcoin is the world's first decentralized digital currency</span>, created in 2009 by the pseudonymous Satoshi Nakamoto. Unlike traditional currencies controlled by governments and banks, Bitcoin operates on a peer-to-peer network secured by cryptography.</p>
-                    
-                    <p>At its core, Bitcoin solves the "double-spending problem" through a distributed ledger called the blockchain. This revolutionary technology enables direct value transfer between parties without requiring a trusted intermediary—fundamentally changing how we think about money and financial sovereignty.</p>
-                    
-                    <p>Since its inception, Bitcoin has evolved from an experimental digital currency to a legitimate asset class adopted by individuals, corporations, and even nation-states. <span class="highlight">Its fixed supply of 21 million coins and decentralized nature make it a hedge against inflation and monetary debasement.</span></p>
-                    
-                    <p>Today, Bitcoin represents more than just digital money—it's a pathway to financial sovereignty, a store of value, and the foundation of a new monetary system built on mathematical certainty rather than institutional trust.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Remove entire Bitcoin intro section -->
 
     <!-- Origin Story -->
     <section class="section origin">
         <div class="container">
-            <h2>Forged in Crisis, Refined by Experience</h2>
+            <h2>Experience Under Pressure</h2>
             <div class="origin-content">
                 <div class="origin-text fade-in">
                     <p>Most Bitcoin consultants learned from books and courses. <span class="highlight">I learned from crisis.</span></p>
-                    <p>When traditional systems collapsed around me, Bitcoin wasn't just an investment thesis—it was a lifeline. That crucible taught me something no classroom could: how to navigate uncertainty with technical precision and psychological resilience.</p>
-                    <p>Since then, I've combined <span class="highlight">deep technical expertise</span> with <span class="highlight">crisis-tested judgment</span> to help businesses and individuals transition to Bitcoin without the painful lessons I learned the hard way.</p>
+                    <p>When traditional systems collapsed around me, Bitcoin wasn't just an investment thesis, it was a lifeline. Crisis taught me that depending on third-party infrastructure defeats the purpose. <span class="highlight">When counterparty risk becomes counterparty failure, only complete ownership protects you.</span> I implement self-custody setups that eliminate third-party risk entirely.</p>
                 </div>
                 <div class="origin-stats fade-in">
                     <div class="stat-card">
@@ -638,13 +699,37 @@
                         <div class="stat-number">CBP</div>
                         <div class="stat-label">Certified Bitcoin Professional</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">AI+</div>
-                        <div class="stat-label">Enhanced Analysis</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Counterparty Risk Problem -->
+    <section class="section principles-gap">
+        <div class="container">
+            <h2>The Counterparty Risk Problem</h2>
+            <div class="gap-content">
+                <p class="gap-intro fade-in">Most Bitcoin treasury solutions create counterparty risk that defeats the purpose of holding Bitcoin in the first place.</p>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card fade-in">
+                        <h3>Enterprise Custody</h3>
+                        <p>Third parties can freeze, seize, or lose your Bitcoin. You don't control your assets and pay expensive ongoing fees for the privilege of counterparty risk.</p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">360°</div>
-                        <div class="stat-label">Full Spectrum Analysis</div>
+                    
+                    <div class="comparison-card fade-in">
+                        <h3>Managed Services</h3>
+                        <p>Platform failures put your assets at risk. When their systems go down, change terms, or fail entirely, your Bitcoin is inaccessible or lost.</p>
+                    </div>
+                    
+                    <div class="comparison-card fade-in">
+                        <h3>DIY Approaches</h3>
+                        <p>Technical complexity and security mistakes can cost everything. Most businesses lack the expertise to implement professional-grade self-custody safely.</p>
+                    </div>
+                    
+                    <div class="comparison-card our-approach fade-in">
+                        <h3>Our Approach</h3>
+                        <p>Zero counterparty risk. You own and control everything - hardware, software, keys, and operations. Professional setup that you operate independently.</p>
                     </div>
                 </div>
             </div>
@@ -654,50 +739,50 @@
     <!-- Services -->
     <section class="section section-alt services">
         <div class="container">
-            <h2>Strategic Bitcoin Implementation</h2>
+            <h2>Professional Bitcoin Treasury Services</h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🔧</div>
-                    <h3>Technical Consulting</h3>
-                    <p>Technical implementation strategy and execution from someone who's proven Bitcoin under real-world pressure.</p>
-                    <ul class="service-features">
-                        <li>Architecture and infrastructure planning</li>
-                        <li>Integration strategy and execution</li>
-                        <li>Risk assessment and mitigation</li>
-                        <li>Team training and knowledge transfer</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-in">
                     <div class="service-icon">🏛️</div>
-                    <h3>Treasury Implementation</h3>
-                    <p>Transform your treasury strategy with battle-tested Bitcoin adoption frameworks designed for institutional needs.</p>
+                    <h3>Treasury Setup</h3>
+                    <p>Professional Bitcoin treasury implementation where you own and control everything - hardware, software, keys, and operations. Eliminates counterparty risk while maintaining professional standards.</p>
                     <ul class="service-features">
-                        <li>Corporate treasury Bitcoin integration</li>
-                        <li>Multi-signature setup and governance</li>
-                        <li>Regulatory compliance frameworks</li>
-                        <li>Staff training and operational procedures</li>
+                        <li>Hardware procurement and configuration</li>
+                        <li>Multi-signature setup with your keys</li>
+                        <li>Professional operations without dependencies</li>
+                        <li>Complete knowledge transfer to your team</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Security Audits</h3>
-                    <p>Comprehensive security assessments that identify vulnerabilities before they become catastrophic failures.</p>
+                    <div class="service-icon">🔍</div>
+                    <h3>Security Audit</h3>
+                    <p>Review your current Bitcoin setup to identify vulnerabilities, dependencies, and counterparty risks. Comprehensive assessment of where third parties could impact your Bitcoin.</p>
                     <ul class="service-features">
-                        <li>Infrastructure security assessment</li>
-                        <li>Key management evaluation</li>
-                        <li>Operational security review</li>
-                        <li>Incident response planning</li>
+                        <li>Comprehensive security assessment</li>
+                        <li>Counterparty risk and dependency analysis</li>
+                        <li>Improvement roadmap development</li>
+                        <li>Implementation planning and priorities</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎓</div>
+                    <h3>Team Training</h3>
+                    <p>Your staff learns to operate everything independently with comprehensive training and documentation.</p>
+                    <ul class="service-features">
+                        <li>Hands-on operational training</li>
+                        <li>Emergency procedures and recovery</li>
+                        <li>Long-term maintenance protocols</li>
+                        <li>Team knowledge transfer</li>
                     </ul>
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">🚨</div>
-                    <h3>Emergency Response Consulting</h3>
-                    <p>Crisis situations demand immediate, expert guidance. When Bitcoin security incidents or urgent sovereignty transitions arise, get proven crisis-tested support.</p>
+                    <h3>Emergency Support</h3>
+                    <p>Crisis assistance when you need expert guidance while maintaining your independence and control.</p>
                     <ul class="service-features">
-                        <li>24-hour incident response coordination</li>
-                        <li>Security breach assessment and recovery</li>
-                        <li>Emergency custody transitions</li>
-                        <li>Crisis communication strategies</li>
+                        <li>24-hour emergency consultation</li>
+                        <li>Recovery guidance and procedures</li>
+                        <li>Crisis response without system access</li>
+                        <li>Independence-preserving support</li>
                     </ul>
                 </div>
             </div>
@@ -707,27 +792,27 @@
     <!-- Why Choose -->
     <section class="section why-choose">
         <div class="container">
-            <h2>Why Full-Spectrum Analysis Matters</h2>
+            <h2>Why Professional Self-Custody</h2>
             <div class="advantages-grid">
                 <div class="advantage-card fade-in">
-                    <div class="advantage-icon">🎯</div>
-                    <h3>Crisis-Tested Judgment</h3>
-                    <p>Learned Bitcoin through necessity, not theory. Experience real-world pressure situations where decisions matter.</p>
+                    <div class="advantage-icon">🛡️</div>
+                    <h3>Zero Counterparty Risk</h3>
+                    <p>No third parties can freeze, seize, or lose your Bitcoin. You control everything - immune to exchange failures and custody provider problems.</p>
                 </div>
                 <div class="advantage-card fade-in">
-                    <div class="advantage-icon">🔍</div>
-                    <h3>Multi-Domain Expertise</h3>
-                    <p>Technical depth combined with political, cultural, and psychological analysis for complete strategic understanding.</p>
+                    <div class="advantage-icon">💰</div>
+                    <h3>Fixed Cost Structure</h3>
+                    <p>One-time setup cost vs. ongoing custody fees that increase with Bitcoin value. Predictable costs vs. percentage-based pricing that grows forever.</p>
                 </div>
                 <div class="advantage-card fade-in">
                     <div class="advantage-icon">⚡</div>
-                    <h3>Early Adopter Insights</h3>
-                    <p>Witnessed every Bitcoin cycle, bubble, and bear market. Know what works and what fails over time.</p>
+                    <h3>Professional Implementation</h3>
+                    <p>Enterprise-grade setup without enterprise dependencies. Get institutional-quality implementation with complete ownership and control.</p>
                 </div>
                 <div class="advantage-card fade-in">
-                    <div class="advantage-icon">🛠️</div>
-                    <h3>Implementation Focus</h3>
-                    <p>Not just strategy—hands-on technical execution that turns Bitcoin theory into operational reality.</p>
+                    <div class="advantage-icon">📈</div>
+                    <h3>Crisis-Proven Approach</h3>
+                    <p>Tested under real pressure when decisions matter most. Guidance from someone who's navigated actual crises with Bitcoin, not just theory.</p>
                 </div>
             </div>
         </div>
@@ -736,23 +821,23 @@
     <!-- Educational Insights -->
     <section class="section section-alt insights">
         <div class="container">
-            <h2>Strategic Insights</h2>
+            <h2>Business Insights</h2>
             <div class="insights-grid">
                 <div class="insight-card fade-in">
-                    <h3>The Treasury Transition Trap</h3>
-                    <p>Most companies approach Bitcoin treasury adoption like buying stocks. This fundamental misunderstanding leads to security failures, operational chaos, and regulatory problems that could have been avoided with proper planning.</p>
+                    <h3>The Real Cost of Counterparty Risk</h3>
+                    <p>Multiple exchange and custody failures have shown that custody isn't just about fees, it's about control. Billions in Bitcoin lost to third-party failures. Professional self-custody eliminates counterparty risk entirely.</p>
                 </div>
                 <div class="insight-card fade-in">
-                    <h3>Security Theater vs. Real Security</h3>
-                    <p>Complex security setups often create more risk than they prevent. The key is understanding which security measures actually matter and which ones just make people feel better while introducing new failure points.</p>
+                    <h3>Fixed Cost vs. Growing Fees</h3>
+                    <p>Custody providers charge 0.5% to 2% annually and fees grow with Bitcoin's value. $10M holding costs $50K to $200K every year forever. Our one-time setup eliminates ongoing fees entirely.</p>
                 </div>
                 <div class="insight-card fade-in">
-                    <h3>Bitcoin Resistance in the Boardroom</h3>
-                    <p>The biggest barriers to Bitcoin adoption aren't technical—they're psychological. Executives who embrace cutting-edge technology in other areas suddenly become risk-averse when Bitcoin enters the conversation. Understanding and addressing these deeper concerns is crucial for successful implementation.</p>
+                    <h3>Implementation Without Operational Complexity</h3>
+                    <p>Professional setup delivers enterprise-grade security with manageable operations. Your team gets comprehensive training and documentation for confident ongoing management.</p>
                 </div>
                 <div class="insight-card fade-in">
-                    <h3>The Sovereignty Transition Shock</h3>
-                    <p>Even tech-savvy executives feel genuine terror when transitioning from traditional custody to self-custody. This isn't about technical competence—it's about psychological readiness for true financial responsibility. Proper preparation addresses both the technical and emotional aspects of this transition.</p>
+                    <h3>Crisis-Tested Under Real Pressure</h3>
+                    <p>Most Bitcoin consultants learned theory. Crisis experience means understanding what actually works when traditional systems fail and every decision matters.</p>
                 </div>
             </div>
         </div>
@@ -761,27 +846,27 @@
     <!-- Process Preview -->
     <section class="section process">
         <div class="container">
-            <h2>Strategic Consultation Process</h2>
+            <h2>Implementation Process</h2>
             <div class="process-grid">
                 <div class="process-step fade-in">
                     <div class="step-number">01</div>
-                    <h3>Discovery & Assessment</h3>
-                    <p>Deep dive into your current situation, goals, and constraints. I'll analyze your technical infrastructure, risk tolerance, and organizational readiness for Bitcoin integration.</p>
+                    <h3>Assessment</h3>
+                    <p>Review your current Bitcoin setup, identify counterparty risks and dependencies, and understand your specific requirements and constraints.</p>
                 </div>
                 <div class="process-step fade-in">
                     <div class="step-number">02</div>
-                    <h3>Strategy Development</h3>
-                    <p>Custom roadmap design based on your specific needs. This includes technical architecture, security protocols, implementation timeline, and risk mitigation strategies.</p>
+                    <h3>Design</h3>
+                    <p>Plan your complete ownership architecture - hardware selection, security configuration, and operational procedures tailored to your business needs.</p>
                 </div>
                 <div class="process-step fade-in">
                     <div class="step-number">03</div>
-                    <h3>Implementation Support</h3>
-                    <p>Hands-on guidance through execution. From technical setup to team training, I'll ensure your Bitcoin strategy becomes operational reality without costly mistakes.</p>
+                    <h3>Implementation</h3>
+                    <p>Professional setup and configuration of all systems. You own everything while we handle the technical complexity of getting it right.</p>
                 </div>
                 <div class="process-step fade-in">
                     <div class="step-number">04</div>
-                    <h3>Ongoing Optimization</h3>
-                    <p>Continuous refinement and support as your needs evolve. Bitcoin adoption is a journey, not a destination—I'll help you adapt as the landscape changes.</p>
+                    <h3>Training</h3>
+                    <p>Comprehensive knowledge transfer to your team. Everyone understands how to operate, maintain, and troubleshoot your Bitcoin treasury independently.</p>
                 </div>
             </div>
         </div>
@@ -793,28 +878,28 @@
             <h2>Frequently Asked Questions</h2>
             <div class="faq-content">
                 <div class="faq-item fade-in">
-                    <div class="faq-question">How long does a typical Bitcoin implementation take?</div>
-                    <div class="faq-answer">Timeline varies based on complexity and organizational readiness. Simple treasury strategies can be implemented in 2-4 weeks, while comprehensive enterprise solutions typically take 3-6 months. I provide realistic timelines during our initial consultation.</div>
+                    <div class="faq-question">How is this different from enterprise custody?</div>
+                    <div class="faq-answer">Enterprise custody means trusting third parties with your Bitcoin and paying ongoing fees. Third parties can freeze, seize, or lose your assets. Our approach eliminates counterparty risk entirely - you own and control everything with no custody fees or dependencies on external parties.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">Is this secure enough for significant Bitcoin holdings?</div>
+                    <div class="faq-answer">Professional implementation delivers enterprise-grade security without counterparty risk. Multi-signature configurations, hardware security modules, geographic distribution, and comprehensive operational procedures provide institutional-level protection with complete ownership.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">What if something goes wrong - do we have support?</div>
+                    <div class="faq-answer">Yes, but support maintains your independence and eliminates counterparty risk. We provide guidance and expertise without accessing your systems. Your team retains complete control while getting expert assistance when needed.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">How long does implementation take and what's included?</div>
+                    <div class="faq-answer">Timeline depends on complexity - typically 2-6 weeks for complete setup. Includes all hardware procurement, professional configuration, security testing, team training, and comprehensive documentation. You get everything needed for independent operations.</div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question">What happens if our team changes?</div>
+                    <div class="faq-answer">Complete documentation and training materials enable smooth transitions. New team members can learn the system through comprehensive guides, procedures, and ongoing support options. Your independence isn't dependent on specific individuals.</div>
                 </div>
                 <div class="faq-item fade-in">
                     <div class="faq-question">What if I don't see value from our first session?</div>
-                    <div class="faq-answer">If you don't find clear, actionable value in our initial consultation, don't pay. I'm confident in the insights I provide, and I want you to feel completely comfortable with the investment.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">Do you work with companies of all sizes?</div>
-                    <div class="faq-answer">I work with companies of all sizes and individuals. Whether you're a startup exploring Bitcoin integration or an established enterprise implementing treasury strategy, I tailor my approach to your specific needs and resources.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">How technical do I need to be to work with you?</div>
-                    <div class="faq-answer">Not very. I translate complex technical concepts into business language and handle the technical heavy lifting. You need to understand the strategic implications, not the cryptographic details.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">What makes your approach different from other Bitcoin consultants?</div>
-                    <div class="faq-answer">Most consultants learned Bitcoin theory first. I lived through crisis where Bitcoin proved essential, giving me unique insight into both the technology and the psychological aspects of financial sovereignty transitions.</div>
-                </div>
-                <div class="faq-item fade-in">
-                    <div class="faq-question">How do you stay current with the rapidly evolving Bitcoin space?</div>
-                    <div class="faq-answer">Continuous education through the Bitcoin ecosystem, maintaining my CBP certification, and staying connected with industry developments. Bitcoin's core principles remain constant, but new tools and techniques emerge to improve implementation efficiency and security.</div>
+                    <div class="faq-answer">If you don't find clear, actionable value in our initial consultation, don't pay. I'm confident in the insights and improvements I can identify in most Bitcoin treasury setups.</div>
                 </div>
             </div>
         </div>
@@ -824,27 +909,29 @@
     <section class="section contact" id="contact">
         <div class="container">
             <div class="contact-content">
-                <h2>Ready to Navigate Bitcoin Adoption?</h2>
-                <p class="contact-subtitle">Schedule a free 30-minute strategy session to discuss your Bitcoin implementation goals. If you don't find clear, actionable value in our consultation, don't pay.</p>
+                <h2>Ready to Eliminate Counterparty Risk?</h2>
+                <p class="contact-subtitle">Schedule a free 30-minute consultation to discuss eliminating counterparty risk from your Bitcoin treasury. If you don't find clear, actionable insights in our consultation, don't pay.</p>
                 
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input type="text" id="name" name="name" required>
+                        <div class="error-message">Please enter your name</div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
                         <input type="email" id="email" name="email" required>
+                        <div class="error-message">Please enter a valid email address</div>
                     </div>
                     <div class="form-group">
                         <label for="company">Company</label>
                         <input type="text" id="company" name="company">
                     </div>
                     <div class="form-group">
-                        <label for="challenge">What's your primary Bitcoin implementation goal?</label>
-                        <textarea id="challenge" name="challenge" placeholder="Describe your current situation and what you're looking to achieve..."></textarea>
+                        <label for="challenge">What's your current Bitcoin setup and what risks or dependencies are you looking to address?</label>
+                        <textarea id="challenge" name="challenge" placeholder="Describe your current treasury approach and what counterparty risks you're looking to eliminate..."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Schedule Free Strategy Session</button>
+                    <button type="submit" class="submit-btn">Get Risk Assessment</button>
                 </form>
             </div>
         </div>
@@ -913,13 +1000,32 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Clear previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Simple validation
-            if (!data.name || !data.email) {
-                alert('Please fill in all required fields.');
+            // Validation
+            let hasErrors = false;
+            
+            if (!data.name || data.name.trim() === '') {
+                document.querySelector('#name').closest('.form-group').classList.add('error');
+                hasErrors = true;
+            }
+            
+            if (!data.email || data.email.trim() === '') {
+                document.querySelector('#email').closest('.form-group').classList.add('error');
+                hasErrors = true;
+            } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+                document.querySelector('#email').closest('.form-group').classList.add('error');
+                hasErrors = true;
+            }
+            
+            if (hasErrors) {
                 return;
             }
             
@@ -945,7 +1051,7 @@
             })
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
-                alert('Thank you! Your message has been sent. I\'ll be in touch within 24 hours to schedule your free strategy session.');
+                alert('Thank you! Your message has been sent. I\'ll be in touch within 24 hours to schedule your free consultation.');
                 
                 // Reset form
                 document.getElementById('contactForm').reset();
