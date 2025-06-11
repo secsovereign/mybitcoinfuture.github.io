@@ -11,6 +11,44 @@
             box-sizing: border-box;
         }
 
+        /* Footer */
+        .footer {
+            background: var(--black);
+            border-top: 1px solid var(--dark-gray);
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--steel-gray);
+            font-size: 0.875rem;
+        }
+
+        .footer-content * {
+            background: none !important;
+        }
+
+        .footer-content a {
+            color: var(--bitcoin-orange);
+            text-decoration: none;
+            background: none !important;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+            background: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
         :root {
             --bitcoin-orange: #f7931a;
             --steel-gray: #6b7280;
@@ -64,6 +102,20 @@
             position: relative;
             z-index: 2;
             color: var(--white);
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .hero h1 {
@@ -75,6 +127,103 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: fadeInUp 1s ease-out;
+        }
+
+        /* Mobile fallback for gradient issues */
+        @media (max-width: 768px) {
+            .hero h1 {
+                background: none;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: unset;
+                background-clip: unset;
+                color: var(--white);
+            }
+            
+            .section-alt h2 {
+                background: none;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: unset;
+                background-clip: unset;
+                color: var(--bitcoin-orange);
+            }
+        }
+
+        /* Risk Assessment Section */
+        .risk-assessment {
+            background: var(--black);
+        }
+
+        .risk-assessment-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .assessment-description {
+            color: var(--steel-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .assessment-description p {
+            margin-bottom: 1.5rem;
+        }
+
+        .assessment-form {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.1) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(247, 147, 26, 0.2);
+        }
+
+        .assessment-form h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .download-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+            color: var(--black);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            justify-self: center;
+            width: fit-content;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3);
+        }
+
+        .privacy-notice {
+            font-size: 0.875rem;
+            color: var(--steel-gray);
+            text-align: center;
+            margin: 0;
+        }
+
+        .privacy-notice a {
+            color: var(--bitcoin-orange);
+            text-decoration: none;
+        }
+
+        .privacy-notice a:hover {
+            text-decoration: underline;
         }
 
         .hero-subtitle {
@@ -93,10 +242,16 @@
             animation: fadeInUp 1s ease-out 0.1s both;
         }
 
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            margin-bottom: 2rem;
+        }
+
         .hero-cta {
             display: inline-flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
             color: var(--black);
             padding: 1rem 2rem;
             border-radius: 50px;
@@ -104,13 +259,40 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            animation: fadeInUp 1s ease-out 0.4s both;
             box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3);
+        }
+
+        .hero-cta.primary {
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+        }
+
+        .hero-cta.secondary {
+            background: linear-gradient(135deg, var(--white) 0%, #f3f4f6 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .hero-cta:hover {
             transform: translateY(-3px);
+        }
+
+        .hero-cta.primary:hover {
             box-shadow: 0 15px 40px rgba(247, 147, 26, 0.4);
+        }
+
+        .hero-cta.secondary:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero-ctas {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .hero-cta {
+                text-align: center;
+                justify-content: center;
+            }
         }
 
         @keyframes fadeInUp {
@@ -601,6 +783,38 @@
             display: block;
         }
 
+        /* Notification system */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: var(--white);
+            font-weight: 500;
+            z-index: 1000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .notification.info {
+            background: linear-gradient(135deg, var(--bitcoin-orange) 0%, #ff8c00 100%);
+        }
+
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
@@ -671,13 +885,29 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="mybitcoinfuture_logo.png" alt="My Bitcoin Future">
+                </div>
                 <h1>My Bitcoin Future</h1>
                 <h2 class="hero-subheading">Sovereign Bitcoin Treasury</h2>
                 <p class="hero-subtitle">Not your keys, not your coins. Not your infrastructure, not your operations. You own the hardware, software, and keys. We handle the professional implementation.</p>
-                <a href="#contact" class="hero-cta">Free Risk Assessment →</a>
+                <div class="hero-ctas">
+                    <a href="#risk-assessment" class="hero-cta primary">Free Treasury Risk Assessment →</a>
+                    <a href="#contact" class="hero-cta secondary">Free Consultation →</a>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 My Bitcoin Future. All rights reserved.</p>
+                <a href="mybitcoinfuture.com/PRIVACY.html" target="_blank">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Remove entire Bitcoin intro section -->
 
@@ -687,8 +917,8 @@
             <h2>Experience Under Pressure</h2>
             <div class="origin-content">
                 <div class="origin-text fade-in">
-                    <p>Most Bitcoin consultants learned from books and courses. <span class="highlight">I learned from crisis.</span></p>
-                    <p>When traditional systems collapsed around me, Bitcoin wasn't just an investment thesis, it was a lifeline. Crisis taught me that depending on third-party infrastructure defeats the purpose. <span class="highlight">When counterparty risk becomes counterparty failure, only complete ownership protects you.</span> We implement self-custody setups that eliminate third-party risk entirely.</p>
+                    <p>Most Bitcoin consultants learned from books and courses. <span class="highlight">Our team learned from crisis.</span></p>
+                    <p>When traditional systems collapsed, Bitcoin wasn't just an investment thesis, it was a lifeline. Crisis taught our founding team that depending on third-party infrastructure defeats the purpose. <span class="highlight">When counterparty risk becomes counterparty failure, only complete ownership protects you.</span> We implement Bitcoin treasury setups that eliminate third-party risk entirely.</p>
                 </div>
                 <div class="origin-stats fade-in">
                     <div class="stat-card">
@@ -789,10 +1019,35 @@
         </div>
     </section>
 
+    <!-- Free Risk Assessment Download -->
+    <section class="section risk-assessment" id="risk-assessment">
+        <div class="container">
+            <h2>Get Your Free Treasury Risk Assessment</h2>
+            <div class="risk-assessment-content">
+                <div class="assessment-description fade-in">
+                    <p>Identify vulnerabilities in your current Bitcoin setup with our comprehensive risk assessment guide. This detailed analysis helps you understand counterparty risks, security gaps, and dependency issues that could put your Bitcoin at risk.</p>
+                    <p>Learn why different custody approaches create different risk profiles and discover how professional self-custody eliminates the risks that have cost billions in Bitcoin losses.</p>
+                </div>
+                <div class="assessment-form fade-in">
+                    <form id="assessmentForm" class="download-form">
+                        <h3>Download Your Free Assessment</h3>
+                        <div class="form-group">
+                            <label for="assessment-email">Email Address *</label>
+                            <input type="email" id="assessment-email" name="email" required>
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+                        <p class="privacy-notice">By submitting, you agree to our <a href="mybitcoinfuture.com/PRIVACY.html" target="_blank">Privacy Policy</a>.</p>
+                        <button type="submit" class="download-btn">Get Free Assessment PDF</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose -->
     <section class="section why-choose">
         <div class="container">
-            <h2>Why Professional Self-Custody</h2>
+            <h2>Why Professional Bitcoin Treasury</h2>
             <div class="advantages-grid">
                 <div class="advantage-card fade-in">
                     <div class="advantage-icon">🛡️</div>
@@ -812,7 +1067,7 @@
                 <div class="advantage-card fade-in">
                     <div class="advantage-icon">📈</div>
                     <h3>Crisis-Proven Approach</h3>
-                    <p>Tested under real pressure when decisions matter most. Guidance from someone who's navigated actual crises with Bitcoin, not just theory.</p>
+                    <p>Tested under real pressure when decisions matter most. Guidance from a team that's navigated actual crises with Bitcoin, not just theory.</p>
                 </div>
             </div>
         </div>
@@ -909,8 +1164,8 @@
     <section class="section contact" id="contact">
         <div class="container">
             <div class="contact-content">
-                <h2>Ready to Eliminate Counterparty Risk?</h2>
-                <p class="contact-subtitle">Schedule a free 30-minute consultation to discuss eliminating counterparty risk from your Bitcoin treasury. If you don't find clear, actionable insights in our consultation, don't pay.</p>
+                <h2>Schedule Your Free Consultation</h2>
+                <p class="contact-subtitle">Ready to implement professional Bitcoin treasury? Schedule a free 30-minute consultation to discuss your requirements and next steps.</p>
                 
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
@@ -931,7 +1186,7 @@
                         <label for="challenge">What's your current Bitcoin setup and what risks or dependencies are you looking to address?</label>
                         <textarea id="challenge" name="challenge" placeholder="Describe your current treasury approach and what counterparty risks you're looking to eliminate..."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Get Risk Assessment</button>
+                    <button type="submit" class="submit-btn">Schedule Consultation</button>
                 </form>
             </div>
         </div>
@@ -950,6 +1205,38 @@
     </script>
 
     <script>
+        // Notification system
+        function showNotification(message, type = 'info') {
+            // Remove any existing notifications
+            const existing = document.querySelector('.notification');
+            if (existing) {
+                existing.remove();
+            }
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Show with animation
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 5000);
+        }
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -960,7 +1247,62 @@
             });
         });
 
-        // Fade in animation on scroll
+        // Assessment form handling
+        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Clear previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validation
+            let hasErrors = false;
+            
+            if (!data.email || data.email.trim() === '') {
+                document.querySelector('#assessment-email').closest('.form-group').classList.add('error');
+                hasErrors = true;
+            } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+                document.querySelector('#assessment-email').closest('.form-group').classList.add('error');
+                hasErrors = true;
+            }
+            
+            if (hasErrors) {
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = this.querySelector('.download-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            // Here you'll integrate with your PDF delivery system
+            // Send email via EmailJS for PDF delivery
+            emailjs.send('service_qm94mqh', 'template_th97dua', {
+                email: data.email
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showNotification('Thank you! Check your email for the Treasury Risk Assessment PDF.', 'success');
+                document.getElementById('assessmentForm').reset();
+            })
+            .catch(function(error) {
+                console.log('FAILED...', error);
+                showNotification('Sorry, there was an error. Please try again or contact us directly.', 'error');
+            })
+            .finally(function() {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+
+        // Contact form handling
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1032,7 +1374,7 @@
             // Check if EmailJS is available
             if (typeof emailjs === 'undefined') {
                 console.error('EmailJS not loaded');
-                alert('Email service is not available. Please try again later or contact me directly.');
+                showNotification('Email service is not available. Please try again later or contact me directly.', 'error');
                 return;
             }
             
@@ -1051,14 +1393,14 @@
             })
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
-                alert('Thank you! Your message has been sent. I\'ll be in touch within 24 hours to schedule your free consultation.');
+                showNotification('Thank you! Your message has been sent. I\'ll be in touch within 24 hours to schedule your free consultation.', 'success');
                 
                 // Reset form
                 document.getElementById('contactForm').reset();
             })
             .catch(function(error) {
                 console.log('FAILED...', error);
-                alert('Sorry, there was an error sending your message. Please try again or contact me directly.');
+                showNotification('Sorry, there was an error sending your message. Please try again or contact me directly.', 'error');
             })
             .finally(function() {
                 // Reset button
@@ -1067,5 +1409,15 @@
             });
         });
     </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 My Bitcoin Future. All rights reserved.</p>
+                <a href="mybitcoinfuture.com/PRIVACY.html" target="_blank">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
