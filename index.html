@@ -11,6 +11,52 @@
             box-sizing: border-box;
         }
 
+        /* Sticky Footer */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, rgba(247, 147, 26, 0.1) 100%);
+            border-top: 1px solid rgba(247, 147, 26, 0.2);
+            padding: 1rem;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .sticky-footer.hidden {
+            transform: translateY(100%);
+        }
+
+        .sticky-footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--white);
+            font-size: 0.875rem;
+        }
+
+        .sticky-footer-content .close-btn {
+            background: none;
+            border: none;
+            color: var(--bitcoin-orange);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.25rem;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-footer-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+        }
+
         /* Footer */
         .footer {
             background: var(--black);
@@ -155,18 +201,11 @@
 
         .risk-assessment-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .risk-assessment-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
         }
 
         .assessment-description {
@@ -1031,7 +1070,6 @@
                             <input type="email" id="assessment-email" name="email" required>
                             <div class="error-message">Please enter a valid email address</div>
                         </div>
-                        <p class="privacy-notice">By submitting, you agree to our <a href="https://mybitcoinfuture.com/PRIVACY.html" target="_blank">Privacy Policy</a>.</p>
                         <button type="submit" class="download-btn">Get Free Assessment PDF</button>
                     </form>
                 </div>
@@ -1231,6 +1269,30 @@
                 }, 300);
             }, 5000);
         }
+
+        // Cookie Consent Initialization
+        window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#1f2937",
+                        "text": "#ffffff"
+                    },
+                    "button": {
+                        "background": "#f7931a",
+                        "text": "#000000"
+                    }
+                },
+                "theme": "block",
+                "position": "bottom",
+                "content": {
+                    "message": "This website uses cookies to ensure you get the best experience.",
+                    "dismiss": "Got it!",
+                    "link": "Learn more",
+                    "href": "https://mybitcoinfuture.com/PRIVACY.html"
+                }
+            });
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
